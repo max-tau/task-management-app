@@ -11,3 +11,13 @@ exports.findAll = async (_, res) => {
 
   res.status(200).json(tasks);
 };
+
+// exports.updateStatus = async (req, res) => {
+//   const { id } = req.params;
+//   const [task] = Task.update(req.body, { where: { id } });
+
+//   if (!task) {
+//     res.status(404).json({ error: "Task could not be found" });
+//   }
+//   res.status(200).json(task);
+// };
