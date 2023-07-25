@@ -6,17 +6,18 @@ module.exports = (connection, DataTypes) => {
       isEmail: true,
       unique: true,
     },
-    firstName: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+    firstName: {
+      type: DataTypes.STRING,
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     jobRole: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
   };
 
