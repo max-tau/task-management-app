@@ -12,6 +12,17 @@ exports.findAll = async (_, res) => {
   res.status(200).json(tasks);
 };
 
+exports.findByQuery = async (req, res) => {
+  console.log(req.query);
+  const filteredTasks = await Task.findAll({
+    where: {
+      assignTo: req.params.assignTo,
+    },
+  });
+
+  res.status(200).json(filteredTasks);
+};
+
 exports.findTaskById = async (req, res) => {
   const taskId = req.params.id;
   const task = await Task.findByPk(taskId);
