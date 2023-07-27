@@ -2,13 +2,11 @@ module.exports = (connection, DataTypes) => {
   const schema = {
     email: {
       type: DataTypes.STRING,
-      allowNull: false,
       isEmail: true,
       unique: true,
     },
     userName: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     firstName: {
       type: DataTypes.STRING,
@@ -22,5 +20,9 @@ module.exports = (connection, DataTypes) => {
   };
 
   const UserModel = connection.define("Users", schema);
+  UserModel.hasMany(connection.models.Tasks, {
+    foreignKey: "assignTo",
+  });
+
   return UserModel;
 };

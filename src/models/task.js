@@ -17,7 +17,7 @@ module.exports = (connection, DataTypes) => {
       allowNull: false,
     },
     assignTo: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
     comments: DataTypes.STRING,
@@ -25,5 +25,7 @@ module.exports = (connection, DataTypes) => {
   };
 
   const TaskModel = connection.define("Tasks", schema);
+  TaskModel.belongsTo(connection.models.Users, { foreignKey: "id" });
+
   return TaskModel;
 };

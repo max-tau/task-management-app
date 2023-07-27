@@ -1,0 +1,1 @@
+Install Sequelize, express, pg
