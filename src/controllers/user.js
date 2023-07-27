@@ -8,6 +8,7 @@ exports.create = async (req, res) => {
 
 exports.findAll = async (_, res) => {
   const users = await User.findAll();
+
   res.status(200).json(users);
 };
 
@@ -39,3 +40,4 @@ exports.deleteUserById = async (req, res) => {
 
   res.status(200).json({ message: "User deleted!" });
 };
+

@@ -9,6 +9,10 @@ module.exports = (connection, DataTypes) => {
     userName: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
+    },
+    firstName: {
+      type: DataTypes.STRING,
     },
     firstName: {
       type: DataTypes.STRING,
