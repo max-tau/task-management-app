@@ -6,6 +6,9 @@ taskRouter
   .post("/", TaskController.create)
   .get("/", TaskController.findAll)
   .get("/:assignTo", TaskController.findByQuery);
-//   .patch("/:id", TaskController.updateStatus);
+  .get("/:id", TaskController.findTaskById)
+  .patch("/:id", TaskController.updateTaskById)
+  .delete("/:id", TaskController.deleteTaskById);
+
 
 module.exports = taskRouter;
