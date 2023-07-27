@@ -40,4 +40,3 @@ exports.deleteUserById = async (req, res) => {
 
   res.status(200).json({ message: "User deleted!" });
 };
-

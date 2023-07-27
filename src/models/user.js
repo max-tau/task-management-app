@@ -14,9 +14,6 @@ module.exports = (connection, DataTypes) => {
     firstName: {
       type: DataTypes.STRING,
     },
-    firstName: {
-      type: DataTypes.STRING,
-    },
     lastName: {
       type: DataTypes.STRING,
     },
