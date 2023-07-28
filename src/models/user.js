@@ -21,9 +21,6 @@ module.exports = (connection, DataTypes) => {
   };
 
   const UserModel = connection.define("Users", schema);
-  UserModel.hasMany(connection.models.Tasks, {
-    foreignKey: "assignTo",
-  });
 
   return UserModel;
 };

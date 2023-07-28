@@ -25,7 +25,6 @@ module.exports = (connection, DataTypes) => {
   };
 
   const TaskModel = connection.define("Tasks", schema);
-  TaskModel.belongsTo(connection.models.Users, { foreignKey: "id" });
 
   return TaskModel;
 };

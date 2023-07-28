@@ -1,7 +1,4 @@
-const Sequelize = require("sequelize");
-const UserModel = require("./user");
-const TaskModel = require("./task");
-
+const { Sequelize, DataTypes } = require("sequelize");
 const { PGDATABASE, PGUSER, PGPASSWORD, PGHOST, PGPORT } = process.env;
 
 const setupDatabase = () => {
@@ -9,11 +6,14 @@ const setupDatabase = () => {
     host: PGHOST,
     port: PGPORT,
     dialect: "postgres",
-    loggin: false,
+    logging: false,
   });
 
-  const User = UserModel(connection, Sequelize);
-  const Task = TaskModel(connection, Sequelize);
+  const User = require("./user")(connection, DataTypes);
+  const Task = require("./task")(connection, DataTypes);
+
+  User.hasMany(Task, { foreignKey: "assignTo" });
+  Task.belongsTo(User);
 
   connection.sync({ alter: true });
   return {
