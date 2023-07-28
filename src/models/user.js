@@ -20,6 +20,9 @@ module.exports = (connection, DataTypes) => {
     jobRole: {
       type: DataTypes.STRING,
     },
+    profilePic: {
+      type: Datatypes.BLOB,
+    },
   };
 
   const UserModel = connection.define("Users", schema);
