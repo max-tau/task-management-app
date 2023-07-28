@@ -20,6 +20,9 @@ module.exports = (connection, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    assignedBy: {
+      type: DataTypes.STRING,
+    },
     comments: DataTypes.STRING,
     status: DataTypes.STRING,
   };

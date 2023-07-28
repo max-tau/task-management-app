@@ -9,14 +9,14 @@ module.exports = (connection, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    firstName: {
-      type: DataTypes.STRING,
-    },
     lastName: {
       type: DataTypes.STRING,
     },
     jobRole: {
       type: DataTypes.STRING,
+    },
+    profilePic: {
+      type: Datatypes.BLOB,
     },
   };
 
