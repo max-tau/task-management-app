@@ -5,7 +5,8 @@ const userRouter = express.Router();
 userRouter
   .post("/", UserController.create)
   .get("/", UserController.findAll)
-  .get("/:id", UserController.findUserById)
+  .get("/username/:username", UserController.findUserByUsername)
+  .get("/id/:id", UserController.findUserById)
   .patch("/:id", UserController.updateUserById)
   .delete("/:id", UserController.deleteUserById);
 
