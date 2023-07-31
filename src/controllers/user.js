@@ -12,6 +12,16 @@ exports.findAll = async (_, res) => {
   res.status(200).json(users);
 };
 
+exports.findUserByUsername = async (req, res) => {
+  const username = req.params.username;
+  const user = await User.findOne({ where: { userName: username } });
+
+  if (!user) {
+    return res.status(404).json({ error: "User not found" });
+  }
+  res.status(200).json(user);
+};
+
 exports.findUserById = async (req, res) => {
   const userId = req.params.id;
   const user = await User.findByPk(userId);
