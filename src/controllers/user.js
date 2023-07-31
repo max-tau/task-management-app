@@ -18,6 +18,13 @@ exports.findUserById = async (req, res) => {
   res.status(200).json(user);
 };
 
+exports.findUserByUsername = async (req, res) => {
+  const currentUserName = req.params.userName;
+  const user = await User.findAll({ where: { userName: currentUserName } });
+
+  res.status(200).json(user);
+};
+
 exports.updateUserById = async (req, res) => {
   const userId = req.params.id;
   const updatedUser = await User.update(req.body, {
@@ -39,4 +46,11 @@ exports.deleteUserById = async (req, res) => {
   }
 
   res.status(200).json({ message: "User deleted!" });
+};
+
+exports.saveProfilePic = async (req, res) => {
+  const userId = req.params.id;
+  await User.update(req.body, { where: { id: userId } });
+
+  res.status(200).json({ message: "Picture uploaded!" });
 };

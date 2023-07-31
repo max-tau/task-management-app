@@ -9,6 +9,9 @@ module.exports = (connection, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    firstName: {
+      type: DataTypes.STRING,
+    },
     lastName: {
       type: DataTypes.STRING,
     },
@@ -16,7 +19,7 @@ module.exports = (connection, DataTypes) => {
       type: DataTypes.STRING,
     },
     profilePic: {
-      type: Datatypes.BLOB,
+      type: DataTypes.BLOB,
     },
   };
 

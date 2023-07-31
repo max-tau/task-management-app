@@ -6,7 +6,9 @@ userRouter
   .post("/", UserController.create)
   .get("/", UserController.findAll)
   .get("/:id", UserController.findUserById)
-  .patch("/:id", UserController.updateUserById)
-  .delete("/:id", UserController.deleteUserById);
+  .get("/username/:userName", UserController.findUserByUsername)
+  .patch("/id/:id", UserController.updateUserById)
+  .delete("/:id", UserController.deleteUserById)
+  .patch("/picture/:id", UserController.saveProfilePic);
 
 module.exports = userRouter;
