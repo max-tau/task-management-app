@@ -8,8 +8,7 @@ userRouter
   .get("/id/:id", UserController.findUserById)
   .get("/username/:userName", UserController.findUserByUsername)
   .patch("/id/:id", UserController.updateUserById)
-  .patch("/picture/:id", UserController.saveProfilePic);
+  .patch("/picture/:id", UserController.saveProfilePic)
   .delete("/:id", UserController.deleteUserById);
-
 
 module.exports = userRouter;

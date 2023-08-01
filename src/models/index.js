@@ -11,14 +11,18 @@ const setupDatabase = () => {
 
   const User = require("./user")(connection, DataTypes);
   const Task = require("./task")(connection, DataTypes);
+  const Comments = require("./comments")(connection, DataTypes);
 
   User.hasMany(Task, { foreignKey: "assignTo" });
   Task.belongsTo(User);
+  Task.hasMany(Comments, { foreignKey: "TaskId" });
+  Comments.belongsTo(Task);
 
   connection.sync({ alter: true });
   return {
     User,
     Task,
+    Comments,
   };
 };
 

@@ -13,7 +13,6 @@ exports.findAll = async (_, res) => {
 };
 
 exports.findByQuery = async (req, res) => {
-  console.log(req.query);
   const filteredTasks = await Task.findAll({
     where: {
       assignTo: req.params.assignTo,

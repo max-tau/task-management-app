@@ -12,21 +12,15 @@ module.exports = (connection, DataTypes) => {
     },
     firstName: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    firstName: {
-      type: DataTypes.STRING,
+      allowNull: true,
     },
     lastName: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     jobRole: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    profilePic: {
-      type: DataTypes.BLOB,
+      allowNull: true,
     },
   };
 
