@@ -23,7 +23,6 @@ module.exports = (connection, DataTypes) => {
     assignedBy: {
       type: DataTypes.STRING,
     },
-    comments: DataTypes.STRING,
     status: DataTypes.STRING,
   };
 
